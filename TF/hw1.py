@@ -4,7 +4,7 @@ x1 = np.linspace(0.0,2*np.pi)
 y1 = np.sin(x1)
 
 x2 = np.linspace(0.0,2*np.pi)
-y2 = np.cos(y1)
+y2 = np.cos(x2)
 
 plt.plot(x1, y1, 'r', label='sin')
 
