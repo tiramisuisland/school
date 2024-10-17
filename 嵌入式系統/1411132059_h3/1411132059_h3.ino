@@ -12,11 +12,11 @@ void loop() {
   Serial.print(s);
 
   if(s>100) {
-    digitalWrite(10,0);
+    digitalWrite(10,1);
     LED_state=0;
   }
   else {
-    digitalWrite(10,1);
+    digitalWrite(10,0);
     LED_state=1;
   }
   Serial.print("LED_state: ");
