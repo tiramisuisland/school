@@ -12,9 +12,9 @@ Y = tf.placeholder(shape=(None, 1), dtype=tf.float32)
 
 # 定義層數與神經元數量
 w1 = tf.Variable(tf.random.normal(shape=(2, 4)))
-b1 = tf.Variable(tf.random.normal(shape=(4,)))
+b1 = tf.Variable(tf.random.normal(shape=(1, 4)))
 w2 = tf.Variable(tf.random.normal(shape=(4, 1)))
-b2 = tf.Variable(tf.random.normal(shape=(1,)))
+b2 = tf.Variable(tf.random.normal(shape=(1, 1)))
 
 # 前向傳播
 hidden_layer = tf.sigmoid(tf.matmul(X, w1) + b1)
@@ -33,10 +33,10 @@ sess.run(init)
 losses = []
 
 # 訓練
-epochs = 30000
+epochs = 800
 for epoch in range(epochs + 1):
     sess.run(train, feed_dict={X: x, Y: y})
-    if epoch % 5000 == 0:
+    if epoch % 80 == 0:
         losses.append(sess.run(loss, feed_dict={X: x, Y: y}))
 
 # 輸出預測值
@@ -44,8 +44,8 @@ print(sess.run(output_layer, feed_dict={X: x}))
 
 # 繪製 loss 曲線
 plt.figure(figsize=(8, 4))
-plt.plot(np.linspace(0, 30000, 7), losses)
-plt.xticks(np.linspace(0, 30000, 7))
+plt.plot(np.linspace(0, 800, 11), losses)
+plt.xticks(np.linspace(0, 800, 11))
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
 plt.show()
