@@ -48,6 +48,6 @@ plt.plot(np.linspace(0, 800, 11), losses)
 plt.xticks(np.linspace(0, 800, 11))
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
+plt.savefig("img.png")
 plt.show()
-
 sess.close()
