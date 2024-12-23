@@ -14,10 +14,6 @@ public class TrainingCamp {
 				System.out.println("訓練一個鬥士");
 				return new Warrior();				
 			}
-			case "student": {
-				System.out.println("訓練一個學生");
-				return new Student();				
-			}
 			// 假如冒險者種類新增，增加case就可以
 			default : return null;
 		}

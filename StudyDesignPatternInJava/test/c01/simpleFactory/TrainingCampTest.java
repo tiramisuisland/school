@@ -17,11 +17,10 @@ public class TrainingCampTest {
 		//訓練營訓練冒險者
 		Adventurer memberA = TrainingCamp.trainAdventurer("archer");
 		Adventurer memberB = TrainingCamp.trainAdventurer("warrior");
-		Adventurer memberC = TrainingCamp.trainAdventurer("student");
+		
 		//看看是不是真的訓練出我們想要的冒險者
 		Assert.assertEquals(memberA.getType(), "Archer");
 		Assert.assertEquals(memberB.getType(), "Warrior");
-		Assert.assertEquals(memberC.getType(), "Student");
 		//memberB應該是Warrior不是Knight，因此這邊會報錯，這是Juint的東西，看不懂可以直接跳過
 		Assert.assertEquals(memberB.getType(), "Knight");
 	}
